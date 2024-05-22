@@ -1,0 +1,37 @@
+embed <drac2>
+input_str,verbose="&*&".lower() if "&*&" else "",False
+if '-v' in input_str:
+	verbose=True
+data=load_json(get_gvar("c832d064-3c85-41a1-95fd-d06f0f56757f"))
+scene_data = data[5]
+complication_data = data[6]
+altered_chance_data = data[7]
+altered_data = data[8]
+complication_roll = vroll("1d6")
+complication = complication_data["table"][str(complication_roll.total)]
+altered_chance_roll = vroll("1d6")
+altered_chance = altered_chance_data["table"][str(altered_chance_roll.total)]
+altered_scene_bool, altered_scene = False, ""
+if altered_chance_roll.total >= 5:
+	altered_roll = vroll("1d6")
+	altered_scene_bool = True
+	altered_scene = altered_data["table"][str(altered_roll.total)]
+else:
+	altered_scene_bool = False
+
+if not altered_scene_bool:
+	return_string = f"# {scene_data.topic}\n{scene_data.description}\n## Scene Complication ⚡\n**{complication}**\n## Altered Scene?\n**{altered_chance}**\n\n\* *Add `-v` to see the rols and table images*"
+else:
+	return_string = f"# {scene_data.topic}\n{scene_data.description}\n## Scene Complication ⚡\n**{complication}**\n## Altered Scene?\n {altered_chance}\n## Altered Scene\n {altered_scene}\n\n\* *Add `-v` to see the rols and table images*"
+verbose_string = ""
+if verbose:
+	if not altered_scene_bool:
+		verbose_string = f"# {scene_data.topic}\n{scene_data.description}\n## Scene Complication ⚡\n**{complication}**\n## Altered Scene?\n{altered_chance}\n## Rolls\n**Scene Complication:** {complication_roll.full}\n**Altered Scene Chance:** {altered_chance_roll.full}"
+	else:
+		verbose_string = f"# {scene_data.topic}\n{scene_data.description}\n## Scene Complication ⚡\n**{complication}**\n## Altered Scene?\n{altered_chance}\n## Altered Scene\n {altered_scene}\n\n## Rolls\n**Scene Complication:** {complication_roll.full}\n**Altered Scene Chance:** {altered_chance_roll.full}\n**Altered Scene:** {altered_roll.full}"
+footer = "|| !oracle scene || by coastlee"
+</drac2>
+-desc "{{ return_string if not verbose else verbose_string }}"
+-thumb https://ia803408.us.archive.org/BookReader/BookReaderImages.php?zip=/11/items/setting-the-scene-images/setting%20the%20scene_jp2.zip&file=setting%20the%20scene_jp2/setting%20the%20scene_0000.jp2&id=setting-the-scene-images&scale=2&rotate=0
+-image " {{'https://i.imgur.com/4tNw20J.png' if verbose else '' }}"
+-footer "{{ footer }}"

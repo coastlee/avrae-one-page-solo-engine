@@ -1,0 +1,7 @@
+embed <drac2>
+return_string = f"# Oracle Focus\nWhen you have a broad question or need to know details about something, draw on one of the tables below. Remember to apply the **Suit Domain** when interpreting the result (this will be displayed by the output of your command).\n\nValid focus inputs are as follows:\n- `!oracle focus action`\n  - Explains what something does\n- `!oracle focus detail`\n  - Explains what something is\n- `!oracle focus topic`\n  - Explains what something is about\n\nThis was built for a deck of playing cards. These commands use the optional rule of using only dice."
+footer = "|| !help oracle focus || by coastlee"
+</drac2>
+-desc "{{ return_string }}"
+-thumb https://i.imgur.com/fl1keiy.png
+-footer "{{ footer }}"

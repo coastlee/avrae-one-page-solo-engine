@@ -1,0 +1,25 @@
+embed <drac2>
+input_str="&*&".lower() if "&*&" else ""
+
+if '?' in input_str:
+	inputs = input_str.split('?')
+	question, modifiers, verbose = f'{inputs[0]}?', inputs[1], False
+	if '-v' in modifiers:
+		verbose = True
+	data=load_json(get_gvar("c832d064-3c85-41a1-95fd-d06f0f56757f"))
+	oracle_how_data=data[10]
+	desc=oracle_how_data.description
+	answer_roll = vroll(oracle_how_data.dicetype)
+	answer = oracle_how_data.table[str(answer_roll.total)]
+	return_string = return_string = f"# The Oracle (How) says...\n## Your Question :question:\n> — *how {question}*\n### Answer :sparkles:\n> ***{answer}***\n### Rolls\n**Answer Roll:** {answer_roll.full}" if verbose else f"# The Oracle (How) says...\n## Your Question :question:\n> — *how {question}*\n### Answer :sparkles:\n> ***{answer}***\n\n\* *Add `-v` to see the rolls and table image*"
+else:
+	likelihood_prompt = True
+	verbose = False
+	return_string = ''
+footer = "||  !help oracle how  || by coastlee"
+</drac2>
+-desc "{{ return_string }}"
+-thumb https://i.imgur.com/DEH2Ac1.png
+-image " {{'https://imgur.com/DCZ94BA.jpg' if verbose else '' }}"
+-footer "{{ footer }}"
+

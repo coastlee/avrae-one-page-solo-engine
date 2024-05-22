@@ -1,0 +1,25 @@
+embed <drac2>
+input_str="&*&".lower() if "&*&" else ""
+verbose = False
+if '-v' in input_str:
+    verbose = True
+data=load_json(get_gvar("c832d064-3c85-41a1-95fd-d06f0f56757f"))
+plot_data = data[17]
+desc = plot_data.description
+objective_roll = vroll(plot_data.objectivetable.dicetype)
+adversary_roll = vroll(plot_data.adversariestable.dicetype)
+reward_roll = vroll(plot_data.rewardstable.dicetype)
+objective = plot_data.objectivetable[str(objective_roll.total)]
+adversary = plot_data.adversariestable[str(adversary_roll.total)]
+reward = plot_data.rewardstable[str(reward_roll.total)]
+
+return_string = f"# Generated Plot Hook\n{plot_data.description}\n### Objective 📃\n- ***{objective}***\n### Adversary 👿\n- ***{adversary}***\n### Reward 💰\n- ***{reward}***\n\n\* *Add `-v` to see the rols and table images*"
+verbose_string = ""
+if verbose:
+    verbose_string = f"# Generated Plot Hook\n{plot_data.description}\n### Objective 📃\n- ***{objective}***\n### Adversary 👿\n- ***{adversary}***\n### Reward 💰\n- ***{reward}***\n## Rolls\n**Objective Roll:** {objective_roll.full}\n**Adversary Roll:** {adversary_roll.full}\n**Reward Roll:** {reward_roll.full}"
+footer = "|| !help oracle plot || by coastlee"
+</drac2>
+-desc "{{ return_string if not verbose else verbose_string }}"
+-thumb https://us.123rf.com/450wm/marselin888/marselin8882304/marselin888230405083/203230946-reading-the-books-opens-the-way-to-new-stories-other-worlds-fairy-tales-fantasy-novellas-and.jpg?ver=6
+-image " {{'https://i.imgur.com/J3xJ9Hf.png' if verbose else '' }}"
+-footer "{{ footer }}"

@@ -1,0 +1,241 @@
+[
+  {
+    "id": 0,
+    "topic": "One Page Solo Engine",
+    "author": "",
+    "description": "A minimal, all-in-one toolkit to play your favorite tabletop RPGs without a GM."
+  },
+  {
+    "id": 1,
+    "topic": "How to Play",
+    "1": "Create one or more characters using your chosen game system.",
+    "2": "Roll a starting **Plot Hook** and a **Random Event**, then **Set the Scene**.",
+    "3": "Start asking the **Oracle** questions. Interpret the answers in context.",
+    "4": "Play the game to overcome the challenges of the scene.",
+    "5": "Use **GM Moves** to move the action.",
+    "6": "**Set the Scene** for the next thing you want your character to do."
+  },
+  {
+    "id": 2,
+    "topic": "Using Playing Cards",
+    "description": "This system uses a deck of playing cards to inspire answers. Look up the rank in the appropriate table and combine with the **Suit Domain** below to determine the answer. When you draw a Joker, shuffle the deck and add a **Random Event**."
+  },
+  {
+    "id": 3,
+    "topic": "Suit Domain",
+    "1": "♣ — Physical (appearance, existence)",
+    "2": "♦ — Technical (mental, operation)",
+    "3": "♠ — Mystical (meaning, capability)",
+    "4": "♥ — Social (personal, connection)"
+  },
+  {
+    "id": 4,
+    "topic": "Optional Rules",
+    "cardsonly": "When you would roll a d6, draw a card and use the rank divided by 2 (round down). Discard Aces.",
+    "diceonly": "When you would draw a card, roll a d12 for the rank and a d4 for the suit. On a 12, flip a coin to see if you use the Q or K."
+  },
+  {
+    "id": 5,
+    "topic": "Set the Scene",
+    "description": "Describe where your character is and what they are trying to accomplish, then roll or a choose a **Scene Complication.**"
+  },
+  {
+    "id": 6,
+    "topic": "Scene Complication",
+    "footer": "Roll once on the **Altered Scene Chance** table",
+    "dicetype": "1d6",
+    "table": {
+      "1": "Hostile forces oppose you",
+      "2": "An obstacle blocks your way",
+      "3": "Wouldn't it suck if...",
+      "4": "An NPC acts suddenly",
+      "5": "All is not as it seems",
+      "6": "Things actually go as planned"
+    }
+  },
+  {
+    "id": 7,
+    "topic": "Altered Scene Chance",
+    "dicetype": "1d6",
+    "table": {
+      "1": "Not an altered scene",
+      "2": "Not an altered scene",
+      "3": "Not an altered scene",
+      "4": "Not an altered scene",
+      "5": "Roll on the **Altered Scene** table",
+      "6": "Roll on the **Altered Scene** table"
+    }
+  },
+  {
+    "id": 8,
+    "topic": "Altered Scene",
+    "dicetype": "1d6",
+    "table": {
+      "1": "A major detail of the scene is enhanced or somehow worse",
+      "2": "The environment is different",
+      "3": "Unexpected NPCs are present",
+      "4": "Add a **Scene Complication** (`!oracle complication`)",
+      "5": "Add a **Pacing Move** (`!oracle pacing`)",
+      "6": "Add a **Random Event** (`!oracle event`)"
+    }   
+  },
+  {
+    "id": 9,
+    "topic": "Oracle (Yes/No)",
+    "description": "When you need to ask a simple question, choose the likelihood and roll 2d6.",
+    "dicetype": "1d6",
+    "answertable": {
+      "likely": 3,
+      "even": 4,
+      "unlikely": 5
+    },
+    "modtable": {
+      "1": ", but...",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": ", and..."
+    }
+  },
+  {
+    "id": 10,
+    "topic": "How Oracle",
+    "description": "When you need to know how big, good, strong, numerous, etc. something is.",
+    "dicetype": "1d6",
+    "table": {
+      "1": "Surprisingly lacking",
+      "2": "Less than expected",
+      "3": "About average",
+      "4": "About average",
+      "5": "More than expected",
+      "6": "Extraordinary"
+    }
+  },
+  {
+    "id": 11,
+    "topic": "GM Moves",
+	"description": "When you need to advance the action, roll on the tables below and describe the results as the GM normally would.\n\nUse a **Pacing Move** (`!oracle pacing`) when there is a lull in the action, or you think *what now?*\n\nUse a **Failure Move** (`!oracle failure`) to move things forward when the PCs fail a check.",
+	"pacing_moves": {
+		"1": "Foreshadow Trouble",
+		"2": "Reveal a New Detail",
+		"3": "An NPC Takes Action",
+		"4": "Advance a Threat",
+		"5": "Advance a Plot",
+		"6": "Add a Random Event to the scene (`!oracle event`)"
+	},
+	"failure_moves": {
+		"1": "Cause Harm",
+		"2": "Put Someone in a Spot",
+		"3": "Offer a Choice",
+		"4": "Advance a Threat",
+		"5": "Reveal an Unwelcome Truth",
+		"6": "Foreshadow Trouble"
+	}
+  },
+  {
+    "id": 12,
+    "topic": "Random Event",
+    "description": "When you need to create a random event, draw the following:\n\nWhat happens: **Action Focus**\nInvolving: **Topic Focus**"
+  },
+  {
+    "id": 13,
+    "topic": "Complex Questions",
+	"description": "When you need to ask an open-ended question, try to find the most appropriate **Oracle (Focus)** to use. If the question is not sufficiently answered, add results from a second **Oracle (Focus)**."
+  },
+  {
+    "id": 14,
+    "topic": "Oracle (Focus)",
+    "description": "When you have a broad question or need to know details about something, draw on one of the tables below. Remember to apply the **Suit Domain** when interpreting the result.",
+    "action_focus": {
+      "description": "What does it do?",
+      "2": "Seek",
+      "3": "Oppose",
+      "4": "Communicate",
+      "5": "Move",
+      "6": "Harm",
+      "7": "Create",
+      "8": "Reveal",
+      "9": "Command",
+      "10": "Take",
+      "11": "Protect",
+      "13": "Assist",
+      "14": "Transform",
+      "1": "Deceive"
+    },
+    "detail_focus": {
+      "description": "What kind of thing is it?",
+      "2": "Small",
+      "3": "Large",
+      "4": "Old",
+      "5": "New",
+      "6": "Mundane",
+      "7": "Simple",
+      "8": "Complex",
+      "9": "Unsavory",
+      "10": "Specialized",
+      "11": "Unexpected",
+      "13": "Exotic",
+      "14": "Dignified",
+      "1": "Unique"
+    },
+    "topic_focus": {
+      "description": "What is this about?",
+      "2": "Current Need",
+      "3": "Allies",
+      "4": "Community",
+      "5": "History",
+      "6": "Future Plans",
+      "7": "Enemies",
+      "8": "Knowledge",
+      "9": "Rumors",
+      "10": "A Plot Arc",
+      "11": "Recent Events",
+      "13": "Equipment",
+      "14": "A Faction",
+      "1": "The PCs"
+    }
+  },
+  {
+    "id": 15,
+    "topic": "One Page Generators",
+    "description": "Content-neutral generators to aid your GM-less adventures in any setting."
+  },
+  {
+    "id": 16,
+    "topic": "Generic Generator",
+    "description": "Use this to generate towns, spaceships, factions, magic items, taverns, monsters, or anything else you can think of.\n\nWhat it does: **Action Focus**\nHow it looks: **Detail Focus**\nHow Significant: **Oracle (How)**"
+  },
+  {
+    "id": 17,
+    "topic": "Plot Hook Generator",
+    "description": "Use this to generate plot hooks, quests, or missions for the PCs to follow.",
+    "objectivetable": {
+      "dicetype": "1d6",
+      "1": "Eliminate a threat",
+      "2": "Learn the truth",
+      "3": "Recover something valuable",
+      "4": "Escort or deliver to safety",
+      "5": "Restore something broken",
+      "6": "Save an ally in peril"
+    },
+    "adversariestable": {
+      "dicetype": "1d6",
+      "1": "A powerful organization",
+      "2": "Outlaws",
+      "3": "Guardians",
+      "4": "Local inhabitants",
+      "5": "Enemy horde or force",
+      "6": "A new or recurring villain"
+    },
+    "rewardstable": {
+      "dicetype": "1d6",
+      "1": "Money or valuables",
+      "2": "Money or valuables",
+      "3": "Knowledge and secrets",
+      "4": "Support of an ally",
+      "5": "Advance a plot arc",
+      "6": "A unique item of power"
+    }
+  }
+]

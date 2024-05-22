@@ -1,0 +1,34 @@
+embed <drac2>
+input_str="&*&".lower() if "&*&" else ""
+
+if '?' in input_str:
+	inputs = input_str.split('?')
+	question, modifiers, verbose = f'{inputs[0]}?', inputs[1], False
+	if '-v' in modifiers:
+		parameters = modifiers.split('-v')
+		modifiers, verbose = "even" if parameters[0].strip() == '' else parameters[0], True
+	likelihood=modifiers.strip() if modifiers.strip() in ["even", "likely", "unlikely"] else "even"
+	likelihood_text_prompt = "You did not enter a valid likelihood. Valid Likelihoods are: `likely`, `even` (default), `unlikely`"
+	likelihood_prompt= True if len(modifiers) != 0 and modifiers.strip() not in ["even", "likely", "unlikely"] else False
+	data=load_json(get_gvar("c832d064-3c85-41a1-95fd-d06f0f56757f"))
+	oracle_data=data[9]
+	desc=oracle_data.description
+	answer_roll = vroll(oracle_data.dicetype)
+	mod_roll = vroll(oracle_data.dicetype)
+	answer = "Yes" if answer_roll.total >= oracle_data.answertable[likelihood] else "No"
+	modifier = oracle_data.modtable[str(mod_roll.total)]
+	answer = answer + modifier
+	assistance_string = f":rotating_light: How About Some Assistance? :rotating_light: | > {likelihood_text_prompt}"
+	return_string = f"# The Oracle (Y/N) says...\n## Your Question :question:\n> — *{question} ({likelihood})*\n### Answer :sparkles:\n> ***{answer}***\n### Description\n{oracle_data.description}\n## Rolls\n**Answer Roll:** {answer_roll.full}\n**Modifier Roll:** {mod_roll.full}" if verbose else f"# The Oracle (Y/N) says...\n## Question :question:\n> — *{question} ({likelihood})*\n### Answer :sparkles:\n> ***{answer}***\n\n\**Add `-v` to see the rolls and table image*"
+else:
+	likelihood_prompt = True
+	verbose = False
+	return_string = ''
+	assistance_string = f":rotating_light: How About Some Assistance? :rotating_light: | _ _\n**You should have asked a question! An example:**\n- `!oracle is the door locked? unlikely`"
+footer = "||  !help oracle  || by coastlee"
+</drac2>
+-desc "{{ return_string }}"
+-thumb https://i.imgur.com/DEH2Ac1.png
+-image " {{'https://i.imgur.com/cx3EiTN.jpg' if verbose else '' }}"
+-f "{{ assistance_string if likelihood_prompt  else ''}}"
+-footer "{{ footer }}"

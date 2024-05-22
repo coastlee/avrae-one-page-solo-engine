@@ -1,0 +1,28 @@
+embed
+-desc "# One Page Solo Engine
+## Oracle Tutorial
+1. Create one or more characters using your chosen game system.
+2. Roll a starting PLOT HOOK and a RANDOM EVENT, then SET THE SCENE.
+  - `!oracle plot`
+    - Determines what the objective is, who opposes you, and what reward awaits you
+  - `!oracle event`
+    - Generates a random event to help kick start the excitement
+  - `!oracle scene`
+    - Set the scene with the preceding two steps first. Then run this command to check how the scene you've described is changed!
+3. Start asking the ORACLE questions. Interpret the answers in context.
+  - `!oracle am I cool? likely` (`!help oracle`)
+    - When you need to have a yes/no answer.
+  - `!oracle how many goblins are there?`
+    - When you need to know how big, good, strong, numerous, etc. something is.
+  - `!oracle focus topic|detail|action` (ask your question separately from the alias invocation
+    - When you need to ask an open-ended question, try to find the most appropriate **ORACLE (FOCUS)** to use. If the question is not sufficiently answered, add results from a second **ORACLE (FOCUS)**.
+    - `!oracle focus topic`
+    - Note that this one is different than the others; ask your question and __then__ execute the command. Do not ask your question as part of the command.
+4. Play the game to overcome the challenges of the scene.
+5. Use **GM MOVES** to move the action.
+  - `!oracle pacing` (when there's a lull in the action)
+  - `!oracle failure` (to move things forward when the PCs fail a check)
+6. SET THE SCENE for the next thing you want your character to do
+  - Set the scene yourself with text
+  - Then check for complications with `!oracle scene`"
+-thumb https://i.imgur.com/DEH2Ac1.png 

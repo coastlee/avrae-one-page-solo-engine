@@ -1,0 +1,27 @@
+embed <drac2>
+input_str,verbose="&*&".lower() if "&*&" else "",False
+if '-v' in input_str:
+	verbose=True
+data=load_json(get_gvar("c832d064-3c85-41a1-95fd-d06f0f56757f"))
+detail_data = data[14]
+suit_data = data[3]
+detail_suit_roll = vroll("1d4")
+detail_suit = suit_data[str(detail_suit_roll.total)]
+detail_number_roll = vroll("1d12")
+detail_coin_flip = {"total": 0}
+detail_total = detail_number_roll.total
+if detail_number_roll.total == 12:
+	detail_coin_flip = vroll("1d2")
+	detail_total += detail_coin_flip.total
+detail_focus = detail_data.detail_focus[str(detail_total)]
+
+return_string = f"# Detail Focus\n{detail_data.description}\n### Detail Focus ⚡\n*What kind of thing is it?*\n- Detail Focus: **{detail_focus}**\n- Suit Domain: **{detail_suit}**\n\n\* *Add `-v` to see the rolls and table images*"
+verbose_string = ""
+if verbose:
+	verbose_string = f"# Detail Focus\n{detail_data.description}\n### Detail Focus ⚡\n*What kind of thing is it?*\n- Detail Focus: **{detail_focus}**\n- Suit Domain: **{detail_suit}**\n## Rolls\n**Detail Suit Domain:** {detail_suit_roll.full}\n**Detail Suit Number & Coinflip Roll(s):** {detail_number_roll.full}, {detail_coin_flip.full if detail_coin_flip.total else 0}"
+footer = "|| !oracle focus action || by coastlee"
+</drac2>
+-desc "{{ return_string if not verbose else verbose_string }}"
+-thumb https://i.imgur.com/fl1keiy.png
+-image " {{'https://i.imgur.com/tqR4Xxh.png' if verbose else '' }}"
+-footer "{{ footer }}"
