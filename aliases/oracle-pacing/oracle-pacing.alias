@@ -10,10 +10,10 @@ pacing_move = gm_moves_data["pacing_moves"][f"{pacing_total}"]
 
 return_string = f"# GM Moves: Pacing\n### Pacing Move 🚶‍♂️\n*What Now?*\n> **__{pacing_move}__**\n\n\* *Add `-v` to see the rolls and table images*"
 if verbose:
-	return_string = f"# GM Moves: Pacing\n{gm_moves_data.description}\n### Pacing Move 🚶‍♂️\n*What Now?*\n> **{pacing_move}**\n## Rolls\n**Pacing Move Roll:** {pacing_roll.full}"
+	return_string = f"# GM Moves: Pacing\n{gm_moves_data.description}\n### Pacing Move 🚶‍♂️\n*What Now?*\n> **__{pacing_move}__**\n## Rolls\n**Pacing Move Roll:** {pacing_roll.full}"
 footer = "|| !oracle pacing || by coastlee"
 </drac2>
--desc "{{ return_string if not verbose else verbose_string }}"
+-desc "{{ return_string }}"
 -thumb https://i.imgur.com/IJrNLPU.png
 -image " {{'https://i.imgur.com/sCRePls.png' if verbose else '' }}"
 -footer "{{ footer }}"
