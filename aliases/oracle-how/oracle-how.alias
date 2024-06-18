@@ -1,9 +1,9 @@
 embed <drac2>
-input_str="&*&".lower() if "&*&" else ""
+input_str="&*&" if "&*&" else ""
 
 if '?' in input_str:
 	inputs = input_str.split('?')
-	question, modifiers, verbose = f'{inputs[0]}?', inputs[1], False
+	question, modifiers, verbose = f'{inputs[0]}?', inputs[1].lower(), False
 	if '-v' in modifiers:
 		verbose = True
 	data=load_json(get_gvar("c832d064-3c85-41a1-95fd-d06f0f56757f"))

@@ -1,9 +1,9 @@
 embed <drac2>
-input_str="&*&".lower() if "&*&" else ""
+input_str="&*&" if "&*&" else ""
 
 if '?' in input_str:
 	inputs = input_str.split('?')
-	question, modifiers, verbose = f'{inputs[0]}?', inputs[1], False
+	question, modifiers, verbose = f'{inputs[0]}?', inputs[1].lower(), False
 	if '-v' in modifiers:
 		parameters = modifiers.split('-v')
 		modifiers, verbose = "even" if parameters[0].strip() == '' else parameters[0], True
