@@ -6,7 +6,7 @@ data=load_json(get_gvar("c832d064-3c85-41a1-95fd-d06f0f56757f"))
 complication_data = data[6]
 complication_roll = vroll("1d6")
 complication = complication_data["table"][str(complication_roll.total)]
-return_string = f"# {complication_data.topic}\nPotentially throw a wrench in your plans so you can be surprised about what new conflict arises. You may need to ask further oracle questions to help flesh out a new complication.\n## Scene Complication ⚡\n**{complication}**\n\n\* *Add `-v` to see the rols and table images*"
+return_string = f"# {complication_data.topic}\nPotentially throw a wrench in your plans so you can be surprised about what new conflict arises. You may need to ask further oracle questions to help flesh out a new complication.\n## Scene Complication ⚡\n**{complication}**\n\n\* *Add `-v` to see the rolls and table images*"
 verbose_string = ""
 if verbose:
     verbose_string = f"# {complication_data.topic}\nPotentially throw a wrench in your plans so you can be surprised about what new conflict arises. You may need to ask further oracle questions to help flesh out a new complication.\n## Scene Complication ⚡\n**{complication}**\n## Rolls\n**Scene Complication:** {complication_roll.full}"

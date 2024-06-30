@@ -13,7 +13,7 @@ objective = plot_data.objectivetable[str(objective_roll.total)]
 adversary = plot_data.adversariestable[str(adversary_roll.total)]
 reward = plot_data.rewardstable[str(reward_roll.total)]
 
-return_string = f"# Generated Plot Hook\n{plot_data.description}\n### Objective 📃\n- ***{objective}***\n### Adversary 👿\n- ***{adversary}***\n### Reward 💰\n- ***{reward}***\n\n\* *Add `-v` to see the rols and table images*"
+return_string = f"# Generated Plot Hook\n{plot_data.description}\n### Objective 📃\n- ***{objective}***\n### Adversary 👿\n- ***{adversary}***\n### Reward 💰\n- ***{reward}***\n\n\* *Add `-v` to see the rolls and table images*"
 verbose_string = ""
 if verbose:
     verbose_string = f"# Generated Plot Hook\n{plot_data.description}\n### Objective 📃\n- ***{objective}***\n### Adversary 👿\n- ***{adversary}***\n### Reward 💰\n- ***{reward}***\n## Rolls\n**Objective Roll:** {objective_roll.full}\n**Adversary Roll:** {adversary_roll.full}\n**Reward Roll:** {reward_roll.full}"

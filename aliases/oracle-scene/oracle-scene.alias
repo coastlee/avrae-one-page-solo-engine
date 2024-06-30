@@ -22,7 +22,7 @@ else:
 if not altered_scene_bool:
 	return_string = f"# {scene_data.topic}\n{scene_data.description}\n## Scene Complication ⚡\n**{complication}**\n## Altered Scene?\n**{altered_chance}**\n\n\* *Add `-v` to see the rols and table images*"
 else:
-	return_string = f"# {scene_data.topic}\n{scene_data.description}\n## Scene Complication ⚡\n**{complication}**\n## Altered Scene?\n {altered_chance}\n## Altered Scene\n {altered_scene}\n\n\* *Add `-v` to see the rols and table images*"
+	return_string = f"# {scene_data.topic}\n{scene_data.description}\n## Scene Complication ⚡\n**{complication}**\n## Altered Scene?\n {altered_chance}\n## Altered Scene\n {altered_scene}\n\n\* *Add `-v` to see the rolls and table images*"
 verbose_string = ""
 if verbose:
 	if not altered_scene_bool:
