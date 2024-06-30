@@ -8,7 +8,7 @@ failure_roll = vroll("1d6")
 failure_total = failure_roll.total
 failure_move = gm_moves_data["failure_moves"][f"{failure_total}"]
 
-return_string = f"# GM Moves: Failure\n### Failure Move 💥\n*So you failed a check...*\n> **__{failure_move}__**\n\n\* *Add `-v` to see the rols and table images*"
+return_string = f"# GM Moves: Failure\n### Failure Move 💥\n*So you failed a check...*\n> **__{failure_move}__**\n\n\* *Add `-v` to see the rolls and table images*"
 if verbose:
 	return_string = f"# GM Moves: Failure\n{gm_moves_data.description}\n### Pacing Move 💥\n*So you failed a check...*\n> **__{failure_move}__**\n## Rolls\n**Failure Move Roll:** {failure_roll.full}"
 footer = "|| !oracle failure || by coastlee"

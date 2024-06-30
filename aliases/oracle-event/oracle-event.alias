@@ -24,7 +24,7 @@ if topic_number_roll.total == 12:
 action_focus = focus_data.action_focus[str(action_total)]
 topic_focus = focus_data.topic_focus[str(topic_total)]
 
-return_string = f"# Random Event\n{data[12].description}\n\n{focus_data.description}\n### Action Focus ⚡\n*What Happened?*\n- Action Focus: **{action_focus}**\n- Suit Domain: **{action_suit}**\n### Topic Focus 📚\n*The **Action Focus** involves...*\n- Topic Focus: **{topic_focus}**\n- Suit Domain: **{topic_suit}**\n\n\* *Add `-v` to see the rols and table images*"
+return_string = f"# Random Event\n{data[12].description}\n\n{focus_data.description}\n### Action Focus ⚡\n*What Happened?*\n- Action Focus: **{action_focus}**\n- Suit Domain: **{action_suit}**\n### Topic Focus 📚\n*The **Action Focus** involves...*\n- Topic Focus: **{topic_focus}**\n- Suit Domain: **{topic_suit}**\n\n\* *Add `-v` to see the rolls and table images*"
 verbose_string = ""
 if verbose:
     verbose_string = f"# Random Event\n{data[12].description}\n\n{focus_data.description}\n### Action Focus ⚡\n*What Happened?*\n- Action Focus: **{action_focus}**\n- Suit Domain: **{action_suit}**\n### Topic Focus 📚\n*The **Action Focus** involves...*\n- Topic Focus: **{topic_focus}**\n- Suit Domain: **{topic_suit}**\n## Rolls\n**Action Suit Domain:** {action_suit_roll.full}\n**Action Suit Number & Coinflip Roll(s):** {action_number_roll.full}, {action_coin_flip.full if action_coin_flip.total else 0}\n**Topic Suit Domain:** {topic_suit_roll.full}\n**Topic Suit Number & Coinflip Roll(s):** {topic_number_roll.full}, {topic_coin_flip.full if topic_coin_flip.total else 0}"
