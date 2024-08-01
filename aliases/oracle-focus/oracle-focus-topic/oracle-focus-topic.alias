@@ -15,7 +15,7 @@ if topic_number_roll.total == 12:
 	topic_total += topic_coin_flip.total
 topic_focus = topic_data.topic_focus[str(topic_total)]
 
-return_string = f"# Topic Focus\n{topic_data.description}\n### Topic Focus ⚡\n*What is this about?*\n- Topic Focus: **{topic_focus}**\n- Suit Domain: **{topic_suit}**\n\n\* *Add `-v` to see the rols and table images*"
+return_string = f"# Topic Focus\n{topic_data.description}\n### Topic Focus ⚡\n*What is this about?*\n- Topic Focus: **{topic_focus}**\n- Suit Domain: **{topic_suit}**\n\n\* *Add `-v` to see the rolls and table images*"
 verbose_string = ""
 if verbose:
 	verbose_string = f"# Topic Focus\n{topic_data.description}\n### Topic Focus ⚡\n*What is this about?*\n- Topic Focus: **{topic_focus}**\n- Suit Domain: **{topic_suit}**\n## Rolls\n**Topic Suit Domain:** {topic_suit_roll.full}\n**Topic Suit Number & Coinflip Roll(s):** {topic_number_roll.full}, {topic_coin_flip.full if topic_coin_flip.total else 0}"
